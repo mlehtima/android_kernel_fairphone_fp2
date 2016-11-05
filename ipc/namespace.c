@@ -33,9 +33,18 @@ static struct ipc_namespace *create_ipc_ns(struct task_struct *tsk,
 	}
 
 	atomic_set(&ns->count, 1);
+
+	err = init_peripc_ns(ns);
+	if (err) {
+		proc_free_inum(ns->proc_inum);
+		kfree(ns);
+		return ERR_PTR(err);
+	}
+
 	err = mq_init_ns(ns);
 	if (err) {
 		proc_free_inum(ns->proc_inum);
+		exit_peripc_ns(ns);
 		kfree(ns);
 		return ERR_PTR(err);
 	}
