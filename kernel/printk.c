@@ -45,7 +45,7 @@
 
 #include <asm/uaccess.h>
 
-#include <mach/msm_rtb.h>
+//#include <mach/msm_rtb.h>
 #define CREATE_TRACE_POINTS
 #include <trace/events/printk.h>
 

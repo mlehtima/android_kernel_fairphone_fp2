@@ -250,6 +250,6 @@ TRACE_EVENT(mdp_trace_counter,
 );
 
 #endif /* if !defined(TRACE_MDSS_MDP_H) || defined(TRACE_HEADER_MULTI_READ) */
-
+#define TRACE_INCLUDE_PATH ../../drivers/video/msm/mdss
 /* This part must be outside protection */
 #include <trace/define_trace.h>

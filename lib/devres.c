@@ -2,7 +2,7 @@
 #include <linux/io.h>
 #include <linux/gfp.h>
 #include <linux/export.h>
-
+#include <asm-generic/pci_iomap.h>
 void devm_ioremap_release(struct device *dev, void *res)
 {
 	iounmap(*(void __iomem **)res);
