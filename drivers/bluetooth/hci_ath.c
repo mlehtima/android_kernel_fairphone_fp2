@@ -40,14 +40,12 @@
 #include <linux/gpio.h>
 #include <linux/of_gpio.h>
 #include <linux/proc_fs.h>
-
+#include <linux/interrupt.h>
 #include <net/bluetooth/bluetooth.h>
 #include <net/bluetooth/hci_core.h>
 
 #include "hci_uart.h"
-#ifdef CONFIG_SERIAL_MSM_HS
 #include <mach/msm_serial_hs.h>
-#endif
 
 static int enableuartsleep = 1;
 module_param(enableuartsleep, int, 0644);

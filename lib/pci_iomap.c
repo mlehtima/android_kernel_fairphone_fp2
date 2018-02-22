@@ -5,7 +5,7 @@
  */
 #include <linux/pci.h>
 #include <linux/io.h>
-
+#include <asm-generic/pci_iomap.h>
 #include <linux/export.h>
 
 #ifdef CONFIG_PCI
