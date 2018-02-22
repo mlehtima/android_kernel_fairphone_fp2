@@ -30,7 +30,7 @@
 #include <linux/ktime.h>
 #include <asm/dma.h>	/* isa_dma_bridge_buggy */
 #include "pci.h"
-
+#include <asm-generic/pci_iomap.h>
 /*
  * Decoding should be disabled for a PCI device during BAR sizing to avoid
  * conflict. But doing so may cause problems on host bridge and perhaps other
