@@ -43,6 +43,7 @@ static struct ipc_namespace *create_ipc_ns(struct task_struct *tsk,
 
 	err = mq_init_ns(ns);
 	if (err) {
+		exit_peripc_ns(ns);
 		proc_free_inum(ns->proc_inum);
 		exit_peripc_ns(ns);
 		kfree(ns);
@@ -121,6 +122,7 @@ static void free_ipc_ns(struct ipc_namespace *ns)
 	sem_exit_ns(ns);
 	msg_exit_ns(ns);
 	shm_exit_ns(ns);
+	exit_peripc_ns(ns);
 	atomic_dec(&nr_ipc_ns);
 
 	/*
